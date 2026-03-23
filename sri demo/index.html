@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Murugan Silks - Premium Traditional Sarees</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Sri Murugan Silks</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="cart.html" id="cart-link">Cart (0)</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="admin.html" class="admin-link">Admin ⚙️</a></li>
+        </ul>
+    </nav>
+
+    <header class="banner">
+        <div class="banner-content">
+            <h1>Elegance Woven in Silk</h1>
+            <p>Discover the finest collection of traditional Kanchipuram and Banarasi sarees.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </header>
+
+    <section id="products" class="product-section">
+        <h2>Our Exclusive Sarees</h2>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search by name or category... 🔍"
+                onkeyup="searchProducts()">
+        </div>
+
+        <div class="product-grid" id="product-grid">
+            <!-- Dynamic products injected here by JS -->
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Sri Murugan Silks. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

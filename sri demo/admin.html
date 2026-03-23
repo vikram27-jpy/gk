@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sri Murugan Silks</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <nav class="navbar">
+        <div class="logo">Admin Panel ⚙️</div>
+        <ul class="nav-links">
+            <li><a href="index.html">View Custom Site</a></li>
+            <li><a href="#" id="logout-btn" style="display:none;" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Section -->
+    <main class="login-container" id="login-section">
+        <div class="login-card">
+            <h2>Admin Sign In</h2>
+            <input type="text" id="admin-user" placeholder="Username (admin)">
+            <input type="password" id="admin-pass" placeholder="Password (1234)">
+            <button class="btn" onclick="login()">Enter Dashboard</button>
+            <p id="login-error" style="color:red; margin-top:10px; display:none;">Invalid credentials</p>
+        </div>
+    </main>
+
+    <!-- Dashboard Section -->
+    <main class="dashboard-container" id="dashboard-section" style="display:none;">
+        <div class="dashboard-tabs">
+            <button class="tab-btn active" onclick="switchTab('products')">Manage Products 📦</button>
+            <button class="tab-btn" onclick="switchTab('orders')">View Orders 🧾</button>
+        </div>
+
+        <!-- Products Tab -->
+        <section id="tab-products" class="tab-content active">
+            <div class="admin-card add-product-card">
+                <h3>Add New Saree Product</h3>
+                <div class="form-group">
+                    <input type="text" id="p-id" placeholder="Product ID (e.g. p5)">
+                    <input type="text" id="p-name" placeholder="Product Name">
+                    <input type="text" id="p-category" placeholder="Category">
+                    <input type="number" id="p-price" placeholder="Price (₹)">
+                    <input type="text" id="p-img" placeholder="Image URL (e.g. images/saree_red.png)">
+                    <button class="btn" onclick="addProduct()">Save Product ➕</button>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h3>Inventory Directory</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-product-list">
+                        <!-- Filled by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Orders Tab -->
+        <section id="tab-orders" class="tab-content" style="display:none;">
+            <div class="admin-card">
+                <h3>Order Ledger</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Items Summary</th>
+                            <th>Total Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-order-list">
+                        <!-- Filled by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
